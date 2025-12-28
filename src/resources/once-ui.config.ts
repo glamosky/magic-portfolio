@@ -14,7 +14,7 @@ import {
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://glamosky.magic-portfolio.com";
+const baseURL: string = "glamosky.vercel.app";
 
 const routes: RoutesConfig = {
   "/": true,

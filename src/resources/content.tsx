@@ -318,7 +318,7 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/d.jose.jpg",
+      src: "/images/gallery/djose.jpg",
       alt: "Bambang SP 2",
       orientation: "horizontal",
     },
