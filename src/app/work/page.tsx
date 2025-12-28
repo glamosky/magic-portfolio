@@ -1,4 +1,4 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+import { Column, Heading, Meta, Schema, Button } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 
@@ -32,6 +32,16 @@ export default function Work() {
         {work.title}
       </Heading>
       <Projects />
+      <Column fillWidth horizontal="center" paddingTop="xl" paddingBottom="l">
+        <Button
+          href="https://github.com/glamosky?tab=repositories"
+          prefixIcon="github"
+          variant="secondary"
+          size="l"
+        >
+          View More of My Projects on GitHub
+        </Button>
+      </Column>
     </Column>
   );
 }

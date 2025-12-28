@@ -2,20 +2,20 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Frank Sebastian",
+  lastName: "Cayaco",
+  name: `Frank Sebastian Cayaco`,
+  role: "Data Analyst/Full Stack Developer",
+  avatar: "/images/avatar-v2.jpg",
+  email: "cayacofranksebastian@gmail.com",
+  location: "Asia/Manila", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: [], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>My weekly newsletter about infrastructure and technology in the Philippines</>,
 };
 
 const social: Social = [
@@ -25,25 +25,13 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/glamosky",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/frank-sebastian-gapas/",
     essential: true,
   },
   {
@@ -56,13 +44,13 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/gallery/djose.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Data is just a story waiting to be written.</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">Once UI</strong>{" "}
@@ -76,8 +64,9 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I'm Frank, a student at <Text as="span" size="xl" weight="strong">MFI Polytechnic Institute Inc.</Text> passionate about <br />
+      <Text as="span" size="xl" weight="strong" onBackground="accent-medium">turning data into stories</Text> and building web applications that solve real-world problems.
+    </>
   ),
 };
 
@@ -102,9 +91,8 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        My endeavors overlap with data analysis, web development, and public transportation. I'm passionate about
+        building projects that help streamline the quirky and complex public transport system of the Philippines.
       </>
     ),
   },
@@ -113,23 +101,24 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Railfans of the Philippines",
+        timeframe: "Jul 2024 - Present",
+        role: "Volunteer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Supported the small NGO in creating a complete suite of a web application for Special Edition Beep Card orders.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Helped registering the NGO to the Securities and Exchange Commission (SEC) for a formal Philippine Council for NGO Certification (PCNC).
+          </>,
+          <>
+            Helped bridge the gap between commuters and key public transport agencies such as LTO, LRTA, DOTr, etc.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/gallery/horizontal-2.jpg",
             alt: "Once UI Project",
             width: 16,
             height: 9,
@@ -137,18 +126,30 @@ const about: About = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Philippine Business for Social Progress",
+        timeframe: "Jul 2024 - Sep 2024",
+        role: "Intern",
+        employmentType: "Part-time",
+        locationType: "On-site",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
+            Supply chain clerk, organized purchased orders.
+          </>
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+        ],
+      },
+      {
+        company: "Appen",
+        timeframe: "Jun 2022 - Jan 2023",
+        role: "Search Engine Evaluator",
+        employmentType: "Freelance",
+        locationType: "Remote",
+        achievements: [
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+            Categorized curated Meta ads.
+          </>
         ],
         images: [],
       },
@@ -159,74 +160,114 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "MFI Polytechnic Institute Inc.",
+        description: <>Studied Diploma in Information Technology</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Rizal Technological University",
+        description: <>Studied BS in Industrial Engineering</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Data Science & Analytics",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Statistical analysis and data visualization using R and Python ecosystems.</>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "R", icon: "r" },
+          { name: "Tidyverse", icon: "r" },
+          { name: "Pandas", icon: "pandas" },
+          { name: "NumPy", icon: "numpy" },
+          { name: "Plotly", icon: "plotly" },
+          { name: "Seaborn", icon: "python" },
+          { name: "Streamlit", icon: "streamlit" },
+          { name: "Scikit-learn", icon: "scikitlearn" },
+          { name: "SciPy", icon: "python" },
+          { name: "TensorFlow", icon: "tensorflow" },
+          { name: "Statsmodels", icon: "python" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Backend Development",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Building robust server-side applications with Python and PHP frameworks.</>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "Python", icon: "python" },
+          { name: "Django", icon: "django" },
+          { name: "Flask", icon: "flask" },
+          { name: "PHP", icon: "php" },
+          { name: "Laravel", icon: "laravel" },
+          { name: "Jinja", icon: "python" },
+          { name: "AJAX", icon: "javascript" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Frontend & Mobile",
+        description: (
+          <>Creating responsive web and mobile applications with modern JavaScript frameworks.</>
+        ),
+        tags: [
+          { name: "JavaScript", icon: "javascript" },
+          { name: "React", icon: "react" },
+          { name: "React Native", icon: "react" },
+          { name: "Next.js", icon: "nextjs" },
         ],
+        images: [],
+      },
+      {
+        title: "Visualization Tools",
+        description: (
+          <>Creating interactive dashboards and data visualizations for business intelligence.</>
+        ),
+        tags: [
+          { name: "Tableau", icon: "tableau" },
+        ],
+        images: [],
+      },
+      {
+        title: "Database & Storage",
+        description: (
+          <>Managing relational databases and data persistence.</>
+        ),
+        tags: [
+          { name: "MySQL", icon: "mysql" },
+          { name: "PostgreSQL", icon: "postgresql" },
+          { name: "Microsoft SQL Server", icon: "mysql" },
+          { name: "Google BigQuery", icon: "bigquery" },
+          { name: "HeidiSQL", icon: "mysql" },
+        ],
+        images: [],
+      },
+      {
+        title: "DevOps & Tools",
+        description: (
+          <>Version control, networking fundamentals, and development workflows.</>
+        ),
+        tags: [
+          { name: "Git", icon: "git" },
+          { name: "Bash" },
+          { name: "Networking" },
+        ],
+        images: [],
+      },
+      {
+        title: "Programming Languages",
+        description: (
+          <>Proficient in multiple programming paradigms and compiled languages.</>
+        ),
+        tags: [
+          { name: "C#", icon: "csharp" },
+          { name: "C++", icon: "cplusplus" },
+        ],
+        images: [],
       },
     ],
   },
@@ -235,7 +276,7 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about latest transportation news",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
@@ -245,7 +286,7 @@ const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  description: `Dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
@@ -255,48 +296,61 @@ const gallery: Gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
+      src: "/images/gallery/exterior.jpg",
+      alt: "MRT External Lighting Inauguration",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      src: "/images/gallery/exterior-2.jpg",
+      alt: "MRT External Lighting Inauguration credit: Roberto Go",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
+      src: "/images/gallery/assemble.jpeg",
+      alt: "PC Assembly credit: Josh Bu",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      src: "/images/gallery/bambang.png",
+      alt: "Bambang SP",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "/images/gallery/d.jose.jpg",
+      alt: "Bambang SP 2",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
+      src: "/images/gallery/exteriorlighting.jpg",
+      alt: "MRT External Lighting Inauguration",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/linux1.jpg",
+      alt: "Linux on an SSD",
       orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/linux2.jpg",
+      alt: "Linux on an SSD",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/lrta.jpg",
+      alt: "MRT External Lighting Inauguration w/ LRTA Spokesperson",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/road.png",
+      alt: "Baguio vs Zurich",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/streamlit.png",
+      alt: "MRT Streamlit Dashboard",
+      orientation: "horizontal",
     },
   ],
 };

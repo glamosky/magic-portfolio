@@ -14,7 +14,7 @@ import {
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://demo.magic-portfolio.com";
+const baseURL: string = "https://glamosky.magic-portfolio.com";
 
 const routes: RoutesConfig = {
   "/": true,
@@ -76,10 +76,10 @@ const style: StyleConfig = {
   theme: "system", // dark | light | system
   neutral: "gray", // sand | gray | slate | custom
   brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  accent: "orange", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
+  border: "rounded", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
   scaling: "100", // 90 | 95 | 100 | 105 | 110
@@ -107,21 +107,21 @@ const effects: EffectsConfig = {
     radius: 100,
   },
   gradient: {
-    display: false,
-    opacity: 100,
+    display: true,
+    opacity: 30,
     x: 50,
-    y: 60,
-    width: 100,
-    height: 50,
-    tilt: 0,
+    y: 40,
+    width: 120,
+    height: 60,
+    tilt: 15,
     colorStart: "accent-background-strong",
-    colorEnd: "page-background",
+    colorEnd: "brand-background-strong",
   },
   dots: {
     display: true,
-    opacity: 40,
+    opacity: 25,
     size: "2",
-    color: "brand-background-strong",
+    color: "accent-background-medium",
   },
   grid: {
     display: false,
@@ -187,17 +187,17 @@ const mailchimp: MailchimpConfig = {
 // default schema data
 const schema: SchemaConfig = {
   logo: "",
-  type: "Organization",
-  name: "Once UI",
+  type: "Person",
+  name: "Frank Sebastian Cayaco",
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: "cayacofranksebastian@gmail.com",
 };
 
 // social links
 const sameAs: SameAsConfig = {
-  threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  threads: "",
+  linkedin: "https://www.linkedin.com/in/frank-sebastian-gapas/",
+  discord: "",
 };
 
 // social sharing configuration for blog posts

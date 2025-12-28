@@ -1,0 +1,89 @@
+---
+title: "Unlocking Insights: A Deep Dive into MRT-3 Ridership Trends"
+summary: "MRT-3 daily ridership statistics from 1999 to 2025."
+publishedAt: "2025-03-07"
+tag: "Transportation"
+image: "/images/gallery/streamlit.png"
+---
+
+## Context
+
+
+The [Metro Rail Transit Line 3](https://en.wikipedia.org/wiki/MRT_Line_3_(Metro_Manila)), also known as the MRT Line 3, MRT-3, or Metrostar Express, is a rapid transit line in Metro Manila in the Philippines. 
+The line runs in an orbital north to south route following the alignment of Epifanio de los Santos Avenue (EDSA). Despite its name, the line is more akin to a light rapid transit system owing to its tram-like rolling stock while having total grade separation and high passenger throughput. The line is officially known as the Yellow Line.
+
+
+## Content
+The dataset is taken from my [FOI request](https://www.foi.gov.ph/agencies/dotr/mrt-and-lrt-latest-ridership-figures/). If you want the latest data, you have to request again from them. 
+
+I've also provided a cleaned and tidy dataset in wide format from the following script:
+```python
+import pandas as pd
+import os
+import re  # For extracting the year from sheet names
+
+# Define file paths
+excel_path =  # specify the xlsx location
+output_path = # specify the output path
+
+# Read all sheets into a dictionary of DataFrames
+sheets = pd.read_excel(excel_path, sheet_name=None)
+
+# Inspect sheet names
+print("Sheets found:", sheets.keys())
+
+df_list = []
+for sheet_name, df in sheets.items():
+    # Extract year from sheet name (expects "DAILY YYYY" format)
+    match = re.search(r"\d{4}", sheet_name)  # Finds a 4-digit year
+    year = int(match.group()) if match else None  # Convert to integer
+    
+    if year is None:
+        print(f"Warning: Could not extract year from sheet name '{sheet_name}'")
+        continue  # Skip this sheet if year is missing
+    
+    df["Year"] = year  # Add a column to store the extracted year
+
+    # Print first few rows for debugging
+    print(f"\nFirst few rows of {sheet_name} (Year {year}):")
+    print(df.head())
+
+    df_list.append(df)
+
+df = pd.concat(df_list, ignore_index=True)
+
+# Drop "Unnamed" columns (empty column headers)
+df = df.loc[:, ~df.columns.str.contains("Unnamed")]
+
+# Ensure first row isn't mistakenly treated as data instead of column names
+if df.columns[0] != "Date":
+    df.columns = df.iloc[0]  # Set first row as column names
+    df = df[1:]  # Drop the now duplicated first row
+
+# Convert ridership columns to numeric (handling errors like #DIV/0!)
+for col in df.columns:
+    if col not in ["Date", "Year"]:  # Skip non-ridership columns
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+
+# Check for any remaining non-numeric columns
+print("\nNon-numeric columns:", df.select_dtypes(exclude=["number"]).columns.tolist())
+
+# Remove rows where the railway was non-operational (i.e., all ridership values are NaN)
+df = df.dropna(how="all", subset=df.columns[1:])  # Ignore 'Date' column in filtering
+
+# Fill missing values with 0
+df.fillna(0, inplace=True)
+
+# Save cleaned dataset
+os.makedirs(os.path.dirname(output_path), exist_ok=True)  # Ensure directory exists
+df.to_csv(output_path, index=False)
+
+print(f"\nCleaned dataset saved to: {output_path}")
+print("Final dataset preview:")
+print(df.head())
+```
+*Warning: You have to remove unrelated texts such as the title and values outside the table for the script to run.*
+
+## Acknowledgements
+1. [Department of Transportation (DOTr) - Philippines](https://www.dotrmrt3.gov.ph/)
+2. Metro Rail Transit Corporation
