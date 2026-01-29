@@ -47,6 +47,8 @@ import {
   SiStreamlit,
   SiTableau,
   SiGooglebigquery,
+  SiPostman,
+  SiWindowsserver,
 } from "react-icons/si";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
@@ -98,6 +100,8 @@ export const iconLibrary: Record<string, IconType> = {
   streamlit: SiStreamlit,
   tableau: SiTableau,
   bigquery: SiGooglebigquery,
+  postman: SiPostman,
+  windowsserver: SiWindowsserver,
   facebook: FaFacebook,
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,

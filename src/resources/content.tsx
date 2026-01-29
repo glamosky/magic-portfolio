@@ -223,11 +223,12 @@ const about: About = {
         images: [],
       },
       {
-        title: "Visualization Tools",
+        title: "Design & Visualization",
         description: (
-          <>Creating interactive dashboards and data visualizations for business intelligence.</>
+          <>Creating interactive dashboards, data visualizations, and UI/UX designs.</>
         ),
         tags: [
+          { name: "Figma", icon: "figma" },
           { name: "Tableau", icon: "tableau" },
         ],
         images: [],
@@ -249,10 +250,12 @@ const about: About = {
       {
         title: "DevOps & Tools",
         description: (
-          <>Version control, networking fundamentals, and development workflows.</>
+          <>Version control, networking, server management, and development workflows.</>
         ),
         tags: [
           { name: "Git", icon: "git" },
+          { name: "Postman", icon: "postman" },
+          { name: "Windows Server", icon: "windowsserver" },
           { name: "Bash" },
           { name: "Networking" },
         ],
